@@ -1,3 +1,5 @@
+import numpy as np
+
 test = {
   'name': 'Question fake_diffs',
   'points': 1,
@@ -32,8 +34,27 @@ test = {
           'locked': False
         },
         {
+          # See calc_limits.py
           'code': r"""
-          >>> np.all(np.logical_and(fake_diffs < 13, fake_diffs > -13))
+          >>> np.all(np.logical_and(fake_diffs < 13.4, fake_diffs > -13.4))
+          True
+          """,
+          'hidden': False,
+          'locked': False
+        },
+        {
+          'code': r"""
+          >>> mu = np.mean(fake_diffs)
+          >>> -0.1 < mu < 0.1
+          True
+          """,
+          'hidden': False,
+          'locked': False
+        },
+        {
+          'code': r"""
+          >>> sd = np.std(fake_diffs)
+          >>> 2.89 < sd < 3.03
           True
           """,
           'hidden': False,

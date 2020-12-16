@@ -25,7 +25,7 @@ test = {
         },
         {
           'code': r"""
-          >>> 0.4 < prop_ge < 0.6
+          >>> 0.004 < prop_ge < 0.011
           True
           """,
           'hidden': False,
